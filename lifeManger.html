@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Life Manager</title>
+  <link rel="stylesheet" href="lifeManger.css" />
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <nav id="sidebar">
+    <ul>
+      <li onclick="showSection('dashboard')">🏠 Home</li>
+      <li onclick="showSection('mood')">😊 Mood Tracker</li>
+      <li onclick="showSection('goals')">🎯 Goals</li>
+      <li onclick="showSection('timetable')">📅 Timetable</li>
+    </ul>
+  </nav>
+
+  <!-- Main Content -->
+  <main>
+    <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <div class="landing-container">
+        <h1>🎓 Welcome to Student Life Manager</h1>
+        <p>Your personal hub to manage goals, moods, timetables, and more.</p>
+        <div class="quick-actions">
+          <button onclick="showSection('mood')">😊 Track Mood</button>
+          <button onclick="showSection('goals')">🎯 Add Goals</button>
+          <button onclick="showSection('timetable')">📅 Timetable</button>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2015/07/17/22/43/student-849825_640.jpg" class="landing-image" />
+      </div>
+    </section>
+
+    <!-- Mood Section -->
+    <section id="mood" style="display: none;">
+      <h2>How are you feeling today?</h2>
+      <div class="mood-options">
+        <div class="mood-card" onclick="saveMood('Happy')">😊<div class="label">Happy</div></div>
+        <div class="mood-card" onclick="saveMood('Sad')">😢<div class="label">Sad</div></div>
+        <div class="mood-card" onclick="saveMood('Tired')">😴<div class="label">Tired</div></div>
+        <div class="mood-card" onclick="saveMood('Angry')">😠<div class="label">Angry</div></div>
+      </div>
+      <div id="moodDisplayBox" class="mood-display-box"></div>
+    </section>
+
+    <!-- Goals Section -->
+    <section id="goals" style="display: none;">
+      <h2>Your Weekly Goals</h2>
+      <input type="text" id="goalInput" placeholder="Enter a goal..." />
+      <button onclick="addGoal()">Add Goal</button>
+      <ul id="goalList"></ul>
+    </section>
+
+    <!-- Timetable Section -->
+    <section id="timetable" style="display: none;">
+      <h2>Create Your Timetable</h2>
+      <select id="dayInput">
+        <option>Monday</option>
+        <option>Tuesday</option>
+        <option>Wednesday</option>
+        <option>Thursday</option>
+        <option>Friday</option>
+        <option>Saturday</option>
+        <option>Sunday</option>
+      </select>
+      <input type="text" id="subjectInput" placeholder="Subject..." />
+      <input type="time" id="timeInput" />
+      <button onclick="addTimetable()">Add</button>
+      <ul id="timetableList"></ul>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>✨ Done by <strong>Acklas</strong> • Student Life Manager App 📚</p>
+    <p>📧 <a href="mailto:acklas2007@gmail.com">Contact Me</a> <br> <strong>acklas2007@gmail.com</strong></p>
+  </footer>
+
+  <script src="lifeManger.js"></script>
+</body>
+</html>
